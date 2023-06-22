@@ -2,15 +2,23 @@
         //GRID CREATION 
 ///////////////////////////////////////////////
 const startButton = document.getElementById('start')
+const replayButton = document.getElementById('try')
 const container = document.querySelector('.container-game')
+const lose = document.querySelector('.game-over');
+const winner = document.querySelector('.win')
+let score = 0;
 
 const bombArray = [];
+replayButton.addEventListener('click', function(){
+    location.reload();
+})
 
 startButton.addEventListener('click', function(){
-
+    score = 0;
     addNumbers(16);
-
     container.innerHTML = '';
+    console.log(bombArray)
+    lose.classList.remove('visible');
     if(document.getElementById('diff').value == 'easy') {
         createMyElement(49, 'square-7');
         }
@@ -23,11 +31,6 @@ startButton.addEventListener('click', function(){
     else if (document.getElementById('diff').value == 'hard') {
         createMyElement(100, 'square-10');
     }
-    
-    if (bombArray.includes()) {
-        document.querySelector('h1').innerHTML = 'HAI PERSOOOOO';
-    }
-    console.log(bombArray)
     
 })
 
@@ -46,8 +49,18 @@ function createMyElement(cellNumber, classes) {
             console.log(clickedNumber, typeof clickedNumber);
             if (bombArray.includes(clickedNumber)) {
                 newDiv.classList.add('red');
-                newDiv.removeEventListener('click')            
+                document.getElementById('points').innerHTML = score;
+                lose.classList.add('visible');
+                container.innerH
             }
+
+            else if (!bombArray.includes(clickedNumber)) {
+                score++;
+            }
+
+            else if(score == 35) {
+                winner.classList.add('visible');
+            } 
         })
     }
     
