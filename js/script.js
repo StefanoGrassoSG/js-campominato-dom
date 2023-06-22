@@ -47,6 +47,7 @@ function createMyElement(cellNumber, classes) {
             if (bombArray.includes(clickedNumber)) {
                 newDiv.classList.add('red');
                 newDiv.classList.remove('square:hover')
+
             }
         })
     }
@@ -60,7 +61,7 @@ function randomNumber(min, max) {
 function addNumbers(cycleNumber) {
     let count = 0;
     while (bombArray.length < cycleNumber) {
-        const oneNumber = randomNumber(1, 16);
+        const oneNumber = randomNumber(1, 49);
 
         if(!bombArray.includes(oneNumber)) {
             bombArray.push(oneNumber)
