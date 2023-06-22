@@ -28,6 +28,12 @@ startButton.addEventListener('click', function(){
     if(document.getElementById('diff').value == 'easy') {
         createMyElement(49, 'square-7');
         addNumbers(16, 1, 49);
+        
+        if (score == 33) {
+            winner.classList.add('visible');
+            document.getElementById('victory-points').innerHTML = score;
+        } 
+
         }
     
     
@@ -70,11 +76,6 @@ function createMyElement(cellNumber, classes) {
             if (!bombArray.includes(clickedNumber)) {
                 score++;
             }
-
-            if (score == 33) {
-                winner.classList.add('visible');
-                document.getElementById('victory-points').innerHTML = score;
-            } 
 
             if (bombArray.includes(clickedNumber)) {
                 newDiv.classList.add('red');
