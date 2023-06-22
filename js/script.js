@@ -34,11 +34,21 @@ startButton.addEventListener('click', function(){
     else if (document.getElementById('diff').value == 'normal') {
         createMyElement(81, 'square-9');
         addNumbers(16, 1, 81);
+        
+        if (score == 65) {
+            winner.classList.add('visible');
+            document.getElementById('victory-points').innerHTML = score;
+        } 
     }
    
     else if (document.getElementById('diff').value == 'hard') {
         createMyElement(100, 'square-10');
         addNumbers(16, 1, 100);
+        
+        if (score == 84) {
+            winner.classList.add('visible');
+            document.getElementById('victory-points').innerHTML = score;
+        } 
     }
     
 })
