@@ -42,6 +42,25 @@ body {
     text-align: center;
 }
 
+#diff {
+    padding: 8px 16px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#diff:hover, #start:hover {
+    opacity: 0.5;
+}
+
+#start {
+    padding: 10px 18px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
 .win {
     max-width: 700px;
     height: 450px;
