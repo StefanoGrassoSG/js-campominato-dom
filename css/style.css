@@ -1,0 +1,76 @@
+/***************
+     RESET
+***************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/**************
+    GENERAL
+**************/
+
+body {
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container-game {
+    max-width: 700px;
+    height: 700px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    color: white;
+}
+
+.game-bar {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.square {
+    background: #999999;
+    border: 3px solid white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+    transition: all 0.2s ease-in-out;
+    color: #999999;
+}
+
+.square-10 {
+    width: calc((100% / 10) - 4px);
+    height: calc(100% / 10);
+}
+
+.square-9 {
+    width: calc((100% / 9) - 4px);
+    height: calc(100% / 9);
+}
+
+.square-7 {
+    width: calc((100% / 7) - 4px);
+    height: calc(100% / 7);
+}
+
+.container-game > .square:hover {
+    background-color: white;
+    color: white;
+}
+
+.active {
+    background-color: white;
+    color: white;
+}
+
