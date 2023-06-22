@@ -77,6 +77,27 @@ body {
     opacity: 0.5;
 }
 
+.win > h2, .win > h4 {
+    font-size: 100px;
+    text-align: center;
+}
+.win > h5 {
+    text-align: center;
+    font-size: 80px;
+    color: white;
+}
+
+.win > button {
+    padding: 8px 16px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.game-over > button:hover {
+    opacity: 0.5;
+}
+
 h1, h2 {
     text-align: center;
     margin: 20px 0;

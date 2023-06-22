@@ -3,15 +3,22 @@
 ///////////////////////////////////////////////
 const startButton = document.getElementById('start')
 const replayButton = document.getElementById('try')
+const replayButtonWinner = document.getElementById('trywinner')
 const container = document.querySelector('.container-game')
 const lose = document.querySelector('.game-over');
-const winner = document.querySelector('.win')
+const winner = document.querySelector('.win');
+
 let score = 0;
 
 const bombArray = [];
 replayButton.addEventListener('click', function(){
     location.reload();
 })
+
+replayButtonWinner.addEventListener('click', function(){
+    location.reload();
+})
+
 
 startButton.addEventListener('click', function(){
     score = 0;
@@ -47,6 +54,16 @@ function createMyElement(cellNumber, classes) {
             this.classList.toggle('active');
             let clickedNumber = parseInt(this.innerHTML);
             console.log(clickedNumber, typeof clickedNumber);
+
+            if (!bombArray.includes(clickedNumber)) {
+                score++;
+            }
+
+            if (score == 1) {
+                winner.classList.add('visible');
+                document.getElementById('victory-points').innerHTML = score;
+            } 
+
             if (bombArray.includes(clickedNumber)) {
                 newDiv.classList.add('red');
                 document.getElementById('points').innerHTML = score;
@@ -54,13 +71,8 @@ function createMyElement(cellNumber, classes) {
                 container.innerH
             }
 
-            else if (!bombArray.includes(clickedNumber)) {
-                score++;
-            }
-
-            else if(score == 35) {
-                winner.classList.add('visible');
-            } 
+            
+            
         })
     }
     
