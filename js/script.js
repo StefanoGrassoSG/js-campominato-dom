@@ -43,9 +43,19 @@ function createMyElement(cellNumber, classes) {
 
 const bombArray = [];
 
-randomNumber(1, 16);
+let count = 0;
+while (bombArray.length < 16) {
+    const oneNumber = randomNumber(1, 16);
+
+    if(!bombArray.includes(oneNumber)) {
+        bombArray.push(oneNumber)
+    }
+
+    count++;
+}
 
 
+console.log(bombArray)
 
 
 
