@@ -64,13 +64,17 @@ h1 {
     height: calc(100% / 7);
 }
 
-.container-game > .square:hover {
-    background-color: white;
-    color: white;
-}
-
 .active {
     background-color: white;
     color: white;
 }
+
+.red {
+    background-color: red;
+    color: red;
+    border: 3px solid red;
+}
+
+
+
 

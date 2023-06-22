@@ -42,8 +42,12 @@ function createMyElement(cellNumber, classes) {
         newDiv.classList.add('square', classes)
         newDiv.addEventListener('click', function(){
             this.classList.toggle('active');
-            let clickedNumber = this.innerHTML;
-            console.log(clickedNumber);
+            let clickedNumber = parseInt(this.innerHTML);
+            console.log(clickedNumber, typeof clickedNumber);
+            if (bombArray.includes(clickedNumber)) {
+                newDiv.classList.add('red');
+                newDiv.classList.remove('square:hover')
+            }
         })
     }
     
