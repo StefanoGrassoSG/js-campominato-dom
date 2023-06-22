@@ -4,7 +4,12 @@
 const startButton = document.getElementById('start')
 const container = document.querySelector('.container-game')
 
+const bombArray = [];
+
 startButton.addEventListener('click', function(){
+
+    addNumbers(16);
+
     container.innerHTML = '';
     if(document.getElementById('diff').value == 'easy') {
         createMyElement(49, 'square-7');
@@ -19,8 +24,13 @@ startButton.addEventListener('click', function(){
         createMyElement(100, 'square-10');
     }
     
-
+    if (bombArray.includes()) {
+        document.querySelector('h1').innerHTML = 'HAI PERSOOOOO';
+    }
+    console.log(bombArray)
+    
 })
+
 
 //FUNCTIONS
 
@@ -32,28 +42,12 @@ function createMyElement(cellNumber, classes) {
         newDiv.classList.add('square', classes)
         newDiv.addEventListener('click', function(){
             this.classList.toggle('active');
-            console.log(this.innerHTML);
+            let clickedNumber = this.innerHTML;
+            console.log(clickedNumber);
         })
     }
+    
 }
-
-//////////////////////////////////////
-        //GAME CREATION 
-///////////////////////////////////////
-
-const bombArray = [];
-
-addNumbers(16);
-
-console.log(bombArray)
-
-
-
-
-
-
-
-//FUNCTIONS
 
 function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
