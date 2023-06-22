@@ -43,17 +43,7 @@ function createMyElement(cellNumber, classes) {
 
 const bombArray = [];
 
-let count = 0;
-while (bombArray.length < 16) {
-    const oneNumber = randomNumber(1, 16);
-
-    if(!bombArray.includes(oneNumber)) {
-        bombArray.push(oneNumber)
-    }
-
-    count++;
-}
-
+addNumbers(16);
 
 console.log(bombArray)
 
@@ -68,3 +58,16 @@ console.log(bombArray)
 function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
   }
+
+function addNumbers(cycleNumber) {
+    let count = 0;
+    while (bombArray.length < cycleNumber) {
+        const oneNumber = randomNumber(1, 16);
+
+        if(!bombArray.includes(oneNumber)) {
+            bombArray.push(oneNumber)
+        }
+
+        count++;
+    }
+} 
