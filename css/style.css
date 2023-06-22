@@ -64,6 +64,11 @@ h1 {
     height: calc(100% / 7);
 }
 
+.container-game > .square:active {
+    background-color: white;
+    color: white;
+}
+
 .active {
     background-color: white;
     color: white;

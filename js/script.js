@@ -46,8 +46,7 @@ function createMyElement(cellNumber, classes) {
             console.log(clickedNumber, typeof clickedNumber);
             if (bombArray.includes(clickedNumber)) {
                 newDiv.classList.add('red');
-                newDiv.classList.remove('square:hover')
-
+                newDiv.removeEventListener('click')            
             }
         })
     }
