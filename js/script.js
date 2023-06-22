@@ -22,21 +22,23 @@ replayButtonWinner.addEventListener('click', function(){
 
 startButton.addEventListener('click', function(){
     score = 0;
-    addNumbers(16);
     container.innerHTML = '';
     console.log(bombArray)
     lose.classList.remove('visible');
     if(document.getElementById('diff').value == 'easy') {
         createMyElement(49, 'square-7');
+        addNumbers(16, 1, 49);
         }
     
     
     else if (document.getElementById('diff').value == 'normal') {
         createMyElement(81, 'square-9');
+        addNumbers(16, 1, 81);
     }
    
     else if (document.getElementById('diff').value == 'hard') {
         createMyElement(100, 'square-10');
+        addNumbers(16, 1, 100);
     }
     
 })
@@ -51,7 +53,7 @@ function createMyElement(cellNumber, classes) {
         newDiv.append(i)
         newDiv.classList.add('square', classes)
         newDiv.addEventListener('click', function(){
-            this.classList.toggle('active');
+            this.classList.add('active');
             let clickedNumber = parseInt(this.innerHTML);
             console.log(clickedNumber, typeof clickedNumber);
 
@@ -59,7 +61,7 @@ function createMyElement(cellNumber, classes) {
                 score++;
             }
 
-            if (score == 1) {
+            if (score == 33) {
                 winner.classList.add('visible');
                 document.getElementById('victory-points').innerHTML = score;
             } 
@@ -82,10 +84,10 @@ function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
   }
 
-function addNumbers(cycleNumber) {
+function addNumbers(cycleNumber, min, max) {
     let count = 0;
     while (bombArray.length < cycleNumber) {
-        const oneNumber = randomNumber(1, 49);
+        const oneNumber = randomNumber(min, max);
 
         if(!bombArray.includes(oneNumber)) {
             bombArray.push(oneNumber)
